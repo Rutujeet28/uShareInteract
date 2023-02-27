@@ -19,12 +19,14 @@ const flash = require("connect-flash");
 const mongoSanitize = require('express-mongo-sanitize');
 const helmet = require("helmet");
 
-
+const bodyParser = require('body-parser');
 
 const session = require("express-session");
 const MongoStore = require('connect-mongo');
 app.set('views',path.join(__dirname,'views'));
 app.set('view engine','ejs');
+app.use(bodyParser.json());
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(methodOverride('_method'));
