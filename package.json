@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/balan2307/Cricvibes/issues"
   },
-  "homepage": "https://github.com/balan2307/Cricvibes#readme"
+  "homepage": "https://github.com/balan2307/Cricvibes#readme",
+  "dependencies": {
+    "cors": "^2.8.5"
+  }
 }
