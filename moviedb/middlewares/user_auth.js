@@ -15,9 +15,10 @@ const isLoggedIn = (req, res, next) => {
             _id: "63f855955ff48db5e63fdae1",
              username: 'esakki' }
         
-        next();
+       
 
     }
+    next();
     // else res.redirect('/user/register');
  
 }
