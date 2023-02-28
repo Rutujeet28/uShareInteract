@@ -28,7 +28,7 @@ app.set('view engine','ejs');
 app.use(bodyParser.json());
 // app.use(cors());
 
-app.use(cors({ credentials: true, origin: 'https://ushareinteract-2.onrender.com' }));
+app.use(cors({ credentials: true, origin: 'http://localhost:3001' }));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(methodOverride('_method'));
