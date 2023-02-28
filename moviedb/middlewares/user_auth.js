@@ -8,6 +8,7 @@ const isLoggedIn = (req, res, next) => {
             _id: new ObjectId("63f855955ff48db5e63fdae1"),
              username: 'esakki' }
     }
+    next();
 }
 
 module.exports=isLoggedIn;
