@@ -18,7 +18,7 @@ const isLoggedIn = (req, res, next) => {
         next();
 
     }
-    else res.redirect('/user/register');
+    // else res.redirect('/user/register');
  
 }
 
