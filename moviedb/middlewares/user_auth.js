@@ -2,8 +2,9 @@ const isLoggedIn = (req, res, next) => {
 
 
     // req.session.user ? next() : res.redirect('/user/register');
-    console.log("headers",req.headers)
-    if(!req.session.user && req.headers && req.headers.Authorization=="Admin")
+    // console.log("headers",req.headers)
+    // && req.headers && req.headers.Authorization=="Admin"
+    if(!req.session.user)
     {
         
         req.session.user= {
