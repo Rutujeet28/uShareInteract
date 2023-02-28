@@ -78,7 +78,7 @@ app.use(flash());
 app.use(helmet({ contentSecurityPolicy: false}));
 
 const db=process.env.DATABASE;
-const port=5000
+const port=process.env.PORT
 
 app.use((req, res, next) => {
 
@@ -127,5 +127,5 @@ app.use((err,req,res,next)=>
 
 app.listen(port,()=>
 {
-    console.log("Listening");
+    console.log("Listening on",port);
 })
