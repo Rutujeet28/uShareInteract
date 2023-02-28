@@ -364,6 +364,7 @@ module.exports.addComment=catchAsync(async(req,res)=>
  const {id}=req.params;
  const {comment}=req.body;
 //  console.log("Check",id,comment);
+console.log("comments",req.session)
  const user=req.session.user._id; 
  const foundPost=await Post.findById(id);
  const newComment=new Comment({comment,user});
