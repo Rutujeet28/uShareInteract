@@ -13,6 +13,11 @@ router.route('/login')
   res.render("auth/login")})
 .post(userController.loginUser);
 
+router.route('/remote/login')
+.get((req,res)=>{
+  res.render("auth/login")})
+.post(userController.remoteLogin);
+
 router.route('/logout')
 .get(userController.logoutUser);
 

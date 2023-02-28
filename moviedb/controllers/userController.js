@@ -19,8 +19,35 @@ module.exports.loginUser=catchAsync(async(req,res)=>
     if(result)
     {
         req.session.user=foundUser;
+        console.log("Loggg me",req.session)
         res.redirect('/user/post');
-        console.log("Loggg me")
+ 
+    }
+    else
+    {
+        res.send("Wrong password");
+    }
+
+})
+
+module.exports.remoteLogin=catchAsync(async(req,res)=>
+{
+    
+    const {email,password}=req.body;
+   
+ 
+    const foundUser=await User.findOne({email});
+    console.log("Body",req.body,foundUser);
+    const result=await bcrypt.compare(password, foundUser.password);
+    
+    if(result)
+    {
+        req.session.user=foundUser;
+        console.log("Loggg me",req.session)
+        return res.status(200).json({
+            title: 'login success'
+      })
+ 
     }
     else
     {

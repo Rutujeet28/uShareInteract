@@ -26,7 +26,9 @@ const MongoStore = require('connect-mongo');
 app.set('views',path.join(__dirname,'views'));
 app.set('view engine','ejs');
 app.use(bodyParser.json());
-app.use(cors());
+// app.use(cors());
+
+app.use(cors({ credentials: true, origin: 'https://ushareinteract-2.onrender.com' }));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(methodOverride('_method'));
@@ -76,11 +78,14 @@ app.use(flash());
 app.use(helmet({ contentSecurityPolicy: false}));
 
 const db=process.env.DATABASE;
-const port=process.env.PORT
+const port=5000
 
 app.use((req, res, next) => {
 
-  console.log("Reques",req.query);
+  console.log("Reques",req.session);
+  res.header('Access-Control-Allow-Credentials', true);
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   res.locals.user = req.session.user;
   res.locals.success = req.flash("success");
   res.locals.error = req.flash("error");
