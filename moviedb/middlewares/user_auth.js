@@ -5,7 +5,7 @@ const isLoggedIn = (req, res, next) => {
     if(!req.session.user)
     {
         req.session.user= {
-            _id: new ObjectId("63f855955ff48db5e63fdae1"),
+            _id: "63f855955ff48db5e63fdae1",
              username: 'esakki' }
     }
     next();
