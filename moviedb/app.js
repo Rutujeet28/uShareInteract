@@ -28,7 +28,7 @@ app.set('view engine','ejs');
 app.use(bodyParser.json());
 // app.use(cors());
 
-app.use(cors({ credentials: true, origin: 'https://railwaygrievances.netlify.app' }));
+app.use(cors({ credentials: true, origin: ['http://localhost:3001', 'https://railwaygrievances.netlify.app'] }));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(methodOverride('_method'));
@@ -82,7 +82,7 @@ const port=process.env.PORT
 app.use((req, res, next) => {
 
   console.log("Request for server",req.session);
-  res.header('Access-Control-Allow-Origin', 'https://railwaygrievances.netlify.app');
+  res.header('Access-Control-Allow-Origin', 'https://railwaygrievances.netlify.app','http://localhost:3001');
   res.header('Access-Control-Allow-Credentials', true);
   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
