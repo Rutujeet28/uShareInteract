@@ -127,7 +127,7 @@ if(!page)
 {
   page=1;
 }
-let size=2;
+let size=8;
 let limit=parseInt(size);
 let skip=(page-1)*size;
 // let posts=await Post.find({user:{$in:feeds}}).populate('user').limit(limit).skip(skip);
@@ -181,7 +181,7 @@ if(!page)
 {
   page=1;
 }
-let size=2;
+let size=8;
 let limit=parseInt(size);
 let skip=(page-1)*size;
 
