@@ -8,12 +8,12 @@ const isLoggedIn = (req, res, next) => {
     {
         
         req.session.user= {
-            _id: "63f855955ff48db5e63fdae1",
-             username: 'esakki' }
+            _id: "64257ba8d0e25fad8a92d1df",
+             username: 'Indianrailways' }
 
         res.locals.user={
-            _id: "63f855955ff48db5e63fdae1",
-             username: 'esakki' }
+            _id: "64257ba8d0e25fad8a92d1df",
+             username: 'Indianrailways' }
         
        
 
