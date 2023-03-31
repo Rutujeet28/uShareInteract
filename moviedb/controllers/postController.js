@@ -20,8 +20,6 @@ module.exports.post=async(req,res)=>
 module.exports.createPost=catchAsync(async(req,res,next)=>
 {
 
-  const d = new Date();
-
   const options = {
     day: 'numeric',
     month: 'numeric',
@@ -31,10 +29,12 @@ module.exports.createPost=catchAsync(async(req,res,next)=>
     second: 'numeric',
     timeZone: 'Asia/Kolkata'
   };
-
-const localTime = d.toLocaleString('en-US', options);
+  
+  const d = new Date();
+  const localTime = d.toLocaleString('en-US', options);
 
   let date_time = localTime;
+  console.log("time",date_time)
  
  
  
