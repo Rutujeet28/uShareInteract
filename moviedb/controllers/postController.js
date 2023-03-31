@@ -22,8 +22,15 @@ module.exports.createPost=catchAsync(async(req,res,next)=>
 
   const d = new Date();
 
- 
-  const options = { timeZone: 'Asia/Kolkata' }; // set the time zone to the user's current location
+  const options = {
+    day: 'numeric',
+    month: 'numeric',
+    year: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric',
+    timeZone: 'Asia/Kolkata'
+  };
 
 const localTime = d.toLocaleString('en-US', options);
 
