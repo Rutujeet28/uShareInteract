@@ -22,11 +22,13 @@ module.exports.createPost=catchAsync(async(req,res,next)=>
 
   const d = new Date();
 
- 
+  console.log("before options ",options)
   const options = { timeZone: 'Asia/Kolkata' }; // set the time zone to the user's current location
+  console.log("options ",options)
 const localTime = d.toLocaleString('en-US', options);
+console.log("time ",localTime)
   let date_time = localTime;
-  console.log("time",options)
+ 
  
  
 const PostSchema=Joi.object({
