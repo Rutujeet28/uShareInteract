@@ -26,6 +26,7 @@ module.exports.createPost=catchAsync(async(req,res,next)=>
 const options = {timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone}; // set the time zone to the user's current location
 const localTime = d.toLocaleString('en-US', options);
   let date_time = localTime;
+  console.log("time",date_time)
  
  
 const PostSchema=Joi.object({
