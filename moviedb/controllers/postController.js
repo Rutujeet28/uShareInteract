@@ -23,7 +23,7 @@ module.exports.createPost=catchAsync(async(req,res,next)=>
   const d = new Date();
 
  
-const options = {timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone}; // set the time zone to the user's current location
+  const options = { timeZone: 'Asia/Kolkata' }; // set the time zone to the user's current location
 const localTime = d.toLocaleString('en-US', options);
   let date_time = localTime;
   console.log("time",options)
